@@ -1,0 +1,101 @@
+ /* Reset basic styles */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+ body {
+     background-color: #f4f4f9;
+ }
+
+ /* Base Navbar Styles (Desktop First) */
+ .navbar {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background-color: #1a1a2e;
+     padding: 15px 30px;
+     color: white;
+ }
+
+ .nav-logo a {
+     color: white;
+     font-size: 24px;
+     text-decoration: none;
+     font-weight: bold;
+ }
+
+ .nav-logo i {
+     /* Accent color for the icon */
+     color: #00adb5;
+     margin-right: 8px;
+ }
+
+ .nav-links {
+     /* Spacing between links */
+     display: flex;
+     list-style: none;
+     gap: 25px;
+ }
+
+ .nav-links a {
+     color: #eeeeee;
+     text-decoration: none;
+     font-size: 16px;
+     transition: color 0.3s ease;
+ }
+
+ .nav-links a i {
+     /* Space between icon and text */
+     margin-right: 5px;
+     color: #00adb5;
+ }
+
+ /* Hover effect */
+ .nav-links a:hover {
+     color: #00adb5;
+ }
+
+ /* Hide hamburger menu button on desktop */
+ .menu-toggle{
+     display: none;
+     background: none;
+     border: none;
+     color:#00adb5;
+     font-size: 24px;
+     cursor: pointer;
+ }
+
+ /* --- Responsive Design (Mobile View) --- */
+ @media (max-width: 660px) {
+     .navbar {
+         /* Allows content to wrap to the next line */
+         flex-wrap: wrap;
+         padding: 15px 20px;
+     }
+
+     /* Show the hamburger menu button on mobile */
+     .menu-toggle {
+         display: block;
+     }
+
+     /* Turn the horizontal menu into a vertical stack */
+     .nav-links {
+         /* Hidden by default on mobile */
+         display: none;
+         flex-direction: column;
+         width: 100%;
+         text-align: center;
+         gap: 15px;
+         padding-top: 15px;
+         border-top: 1px solid #333;
+         margin-top: 10px;
+     }
+
+     /* Target this class when you want to show the menu via JavaScript */
+     .nav-links.active {
+         display: flex;
+     }
+ }
